@@ -1,25 +1,38 @@
-<h1>Password Generator</h1> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<form action={% url 'password' %}>
-    <select name="length" >
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12" selected="selected">12</option>
-        <option value="13">13</option>
-    </select>
-    <br>
-    <br>
-    <input type="checkbox" name="uppercase">Uppercase
-    <br>
-    <input type="checkbox" name="numbers">Numbers
-    <br>
-    <input type="checkbox" name="special">Special Characters
-    <br>
-    <input type="submit" value="Generate Password">
-</form>
+<div class="container text-center">
+    <h1>Password Generator</h1> 
+</div>
+<div class="container m-3">
+    <form action={% url 'password' %}>
+        <label>Select the legh of the password (between 4 and 13) </label>
+        <select name="length" >
+            <option value="4">4 characters</option>
+            <option value="5">5 characters</option>
+            <option value="6">6 characters</option>
+            <option value="7">7 characters</option>
+            <option value="8">8 characters</option>
+            <option value="9">9 characters</option>
+            <option value="10">10 characters</option>
+            <option value="11">11 characters</option>
+            <option value="12" selected="selected">12 characters</option>
+            <option value="13">13 characters</option>
+        </select>
+        <br>
+        <br>
+        <div class="row col-12">
+            <div class="col-4 checkbox">
+                <input type="checkbox"name="special"> Special Characters
+            </div>
+            <div class="col-4 text-center">
+                <input type="checkbox" name="uppercase"> Uppercase
+            </div>
+            <div class="text-center">
+                <input type="checkbox" name="numbers"> Numbers
+            </div>
+        </div>
+
+        <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary">
+    </form>
+</div>
